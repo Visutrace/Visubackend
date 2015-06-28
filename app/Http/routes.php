@@ -12,9 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
-Route::get('/info', function() {
-  return phpinfo();
+Route::get('/phpinfo', function() {
+  return View::make('phpinfo');
+});
+
+Route::get('/environment',function() {
+  return getenv('APP_ENV');
+});
+
+Route::get('/check',function() {
+  if(Auth::check()) return 'Welcome back, ' . Auth::user()->username;
+
+  return 'Hi guest' . link_to_route('login', 'Login with Github!');
+});
+
+Route::get('login', array('as' => 'login', 'uses' => 'AuthController@login'));
+
+Route::get('/yay', function(){
+  return 'you have logged in';
 });

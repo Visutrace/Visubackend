@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //  
     }
 
     /**
@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+        $this->app->register('Laravel\Socialite\SocialiteServiceProvider');
+        $this->app->register('Illuminate\Html\HtmlServiceProvider');
     }
 }
