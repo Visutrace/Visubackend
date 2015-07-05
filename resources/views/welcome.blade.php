@@ -1,52 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('templates.base')
+@section('content')
+@include('snippets.nav_bar')
 
-        <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <div class='col-xs-9 col-offset-xs-3'>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+    </div>
+        <div id="body" class="width">
+            <section id="content">
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+                <h2>Introducing to Visutrace</h2>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+                <p>
+                    Welcome to Visutrace: The Vehicle Ad-hoc Network Trace Visualizer. 
+                    This website allows you to visualize traces with special functionality aimed at Vehicle Ad-hoc Networks. 
+                    Seem interested? Check out some of the visualizations that you can create with these examples from the GMSF dataset:
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+                    <ul>
+                        <li>The Urban Dataset</li>
+                        <li>The City Dataset</li>
+                        <li>The Rural Dataset</li>
+                    </ul>
 
-            .title {
-                font-size: 96px;
-                margin-bottom: 40px;
-            }
+                </p>
 
-            .quote {
-                font-size: 24px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="quote">{{ Inspiring::quote() }}</div>
-            </div>
+            </section>
+            <section>
+                <h4> Logging In  </h4>
+                <p>
+                    Right now we support logging in with Github, but we plan to expand authentication to include Google, Facebook, and Twitter.
+                </p>
+
+                <a href="{!! route('login')!!}">  
+                    {!! HTML::image('images/showimage.png') !!}
+                </a>
+
+            </section>  
+            
+           <div class="clear"></div>
         </div>
-    </body>
-</html>
+    </div>
+@stop
