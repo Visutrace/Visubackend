@@ -21,31 +21,28 @@ class AuthenticateUser {
     $this->auth = $auth;
   }
 
-
-
   public function execute($hasCode, $listener)
   {
     if(!$hasCode) {
-      return $this->getAuthorizationFirst();
+      return $this->getAuthorizationFirst('github');
     } 
 
-     $user =  $this->users->findByUsernameOrCreate($this->getGithubUser());
+     $user =  $this->users->findByUsernameOrCreate($this->getSocialMediaUser('github'));
      $this->auth->login($user, true);
 
      return $listener->userHasLoggedIn($user);
 
   }
 
-
-  private function getGithubUser()
+  private function getSocialMediaUser($social_media_type)
   {
-    return $this->socialite->driver('github')->user();
+    return $this->socialite->driver($social_media_type)->user();
   }
 
 
-  private function getAuthorizationFirst()
+  private function getAuthorizationFirst($social_media_type)
   {
-    return $this->socialite->driver('github')->redirect();
+    return $this->socialite->driver($social_media_type)->redirect();
   }
 
 }

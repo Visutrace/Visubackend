@@ -17,6 +17,17 @@ class AuthController extends Controller
 
   public function userHasLoggedIn($user)
   {
-    return Redirect('/yay');
+    return Redirect('/home');
+  }
+
+  public function home()
+  {
+    return \View::make('home');
+  }
+
+  public function logout() 
+  {
+    \Auth::logout();
+    return Redirect('/');
   }
 }
