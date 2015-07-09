@@ -20,8 +20,7 @@ Route::get('/check',  function() {
 });
 
 Route::get('/home', array('as' => 'home', 'uses' => 'AuthController@home'));
-
-
 Route::get('/login', array('as' => 'login', 'uses' => 'AuthController@login'));
-
 Route::get('/logout', array('as' => 'logout', 'uses' => 'AuthController@logout'));
+
+Route::resource('traces', 'TraceController', ['except' => ['edit','update'] ] );
