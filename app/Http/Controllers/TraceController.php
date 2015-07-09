@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTraceRequest as StoreTraceRequest;
+
+use Ramsey\Uuid\Uuid;
 
 class TraceController extends Controller
 {
@@ -26,7 +29,7 @@ class TraceController extends Controller
      */
     public function create()
     {
-        // TODO: Show the form for creating traces
+        return \View::make('traces.create');
     }
 
     /**
@@ -34,9 +37,11 @@ class TraceController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(StoreTraceRequest $request)
     {
-        // TODO: Logic for storing the file
+
+        return Uuid::uuid4();
+
     }
 
     /**
