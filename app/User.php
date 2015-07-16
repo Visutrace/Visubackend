@@ -19,11 +19,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $table = 'users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
     protected $fillable = ['username', 'email', 'avatar'];
 
     /**
@@ -32,4 +28,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    public function traces()
+    {
+        return $this->hasMany('App\User_Traces');
+    }
 }
