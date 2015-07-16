@@ -22,7 +22,7 @@
             'files' => true)) !!}
 
     <div class="form-group">
-        {!! Form::label('Upload your traces here! (Must be a CSV) ') !!}
+        {!! Form::label('Upload your traces here! ') !!}
         {!! Form::file('traces', null) !!}
     </div>
 
@@ -34,16 +34,6 @@
 
 
     </div>
-
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
 </div>
 
