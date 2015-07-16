@@ -24,7 +24,7 @@ class StoreTraceRequest extends Request
     public function rules()
     {
         return [
-             'traces'       => 'required|mimes:text,csv'
+             'traces'       => 'required'
         ];
     }
 }
