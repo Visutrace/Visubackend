@@ -5,7 +5,7 @@
 <title>Visutrace: The Vehicle Ad-hoc Network Trace Visualizer!</title>
 {!! HTML::style('css/template_style.css') !!}
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -22,7 +22,10 @@ License: Creative Commons Attribution
     <header>
     <div class="width">
             <h1><a href="/">visu<span>trace</span></a></h1>
-            <h2>The Vehicle Ad-hoc Network Trace Visualizer</h2>
+            <h2>
+                The Vehicle Ad-hoc Network <br>
+                Trace Visualizer
+            </h2>
     </div>
     </header>
 
@@ -70,12 +73,15 @@ License: Creative Commons Attribution
 </div>
 
 @endif
+<div class="col-xs-12">
+    
+    @yield('content')
 
-@yield('content')
+</div>
 
 
 
-    <footer>
+    <footer class="col-xs-12">
     <!--
         <div class="footer-content width">
             <ul>
