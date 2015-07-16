@@ -14,6 +14,14 @@
   background: #0d77b6;
 }
 
+.white-chevron {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+
 .cbp-spmenu a {
   display: block;
   color: #fff;
