@@ -11,6 +11,12 @@ class User_TracesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+      DB::table('user_traces')->truncate();
+
+
+      factory('App\UserTraces', 200)->create()->each(function($u) {
+        
+      });
     }
 }
