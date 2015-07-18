@@ -22,7 +22,7 @@ class AuthController extends Controller
 
   public function home()
   {
-    return \View::make('home');
+    return \View::make('home')->withUser(\Auth::user());
   }
 
   public function logout() 
