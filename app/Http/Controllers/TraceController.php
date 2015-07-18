@@ -8,19 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTraceRequest as StoreTraceRequest;
 
-use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Uuid as Uuid;
 
 class TraceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        // TODO: Return a list of the current user's traces
-    }
 
     /**
      * Show the form for creating a new resource.
