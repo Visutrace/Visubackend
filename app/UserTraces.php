@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User_Traces extends Model
+class UserTraces extends Model
 {
-  protected $table = 'user_traces'
+  protected $table = 'user_traces';
 
 
     /**
@@ -25,7 +25,7 @@ class User_Traces extends Model
 
     public function user()
     {
-      return $this->belongsTo('App\User',)
+      return $this->belongsTo('App\User');
     }
 
 }
