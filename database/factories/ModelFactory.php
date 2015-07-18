@@ -23,9 +23,9 @@ $factory->define(App\User::class, function ($faker) {
 });
 
 
-$factory->define(App\User_Traces::class, function($faker){
+$factory->define(App\UserTraces::class, function($faker){
   return [
     'uuid' => $faker->unique()->uuid,
-    'user_id' => App\User::orderByRaw("RAND()")->get()->id
+    'user_id' => rand(1,50)
   ];
 });
