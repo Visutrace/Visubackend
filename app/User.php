@@ -32,6 +32,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function traces()
     {
-        return $this->hasMany('App\User_Traces');
+        return $this->hasMany('App\UserTraces');
     }
 }
