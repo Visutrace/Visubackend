@@ -9,9 +9,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTraceRequest as StoreTraceRequest;
 
 use Rhumsaa\Uuid\Uuid as Uuid;
+use App\Repositories\UserTracesRepository;
 
 class TraceController extends Controller
 {
+
+    private $traces;
+
+    public function __construct(UserTracesRepository $traces)
+    {
+        $this->traces = $traces;
+    }
 
 
 
@@ -59,10 +67,7 @@ class TraceController extends Controller
      */
     public function show($uuid)
     {
-        $trace = \App\UserTraces::where('uuid',$uuid)->first();
-
-        dd($trace);
-
+        return $this->traces->whereUuid($uuid);
     }
 
     /**
