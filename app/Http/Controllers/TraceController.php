@@ -8,10 +8,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTraceRequest as StoreTraceRequest;
 
-use Ramsey\Uuid\Uuid as Uuid;
+use Rhumsaa\Uuid\Uuid as Uuid;
 
 class TraceController extends Controller
 {
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -31,8 +33,22 @@ class TraceController extends Controller
     public function store(StoreTraceRequest $request)
     {
 
-        return Uuid::uuid4();
+    $trace_instance = new \App\UserTraces(array(
+      'uuid' => Uuid::uuid4()
+    ));
 
+    $trace_instance->user_id = \Auth::user()->id;
+
+    $trace_instance->save();
+
+    $fileName = $trace_instance->uuid . '.' . 
+        $request->file('traces')->getClientOriginalExtension();
+
+    $request->file('traces')->move(
+        storage_path() . '/traces/', $fileName
+    );
+
+    return \Redirect::route('home')->withSuccess("Success, data set uploaded!");
     }
 
     /**
@@ -41,9 +57,12 @@ class TraceController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        // TODO: Logic for returning json of the traces with the given ID
+        $trace = \App\UserTraces::where('uuid',$uuid)->first();
+
+        dd($trace);
+
     }
 
     /**
