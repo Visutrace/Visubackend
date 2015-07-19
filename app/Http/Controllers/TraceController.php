@@ -67,7 +67,15 @@ class TraceController extends Controller
      */
     public function show($uuid)
     {
-        return $this->traces->whereUuid($uuid);
+        $traces =  $this->traces->whereUuid($uuid);
+
+        if(! isset($traces))
+            \App::abort('404');
+
+        $trace_lines  = file(storage_path() . '/traces/'. $uuid . '.csv');
+
+        return \View::make('traces.show')->withTrace_lines($trace_lines);
+
     }
 
     /**
