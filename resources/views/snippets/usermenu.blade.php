@@ -6,17 +6,11 @@
   </h3>
   <a href="{!! route('home') !!}">Home</a>
   <a href="{!! route('traces.create') !!}">Upload a data set</a>
-  <a href="#">Zucchini garlic</a>
-  <a href="#">Catsear azuki bean</a>
-  <a href="#">Dandesdsdsdsdlion bunya</a>
-  <a href="#">Rutabaga</a>
 </nav>
 
-  <div>
+  <div style="position:fixed; left:10px">
      <h3 class="white-chevron"><i class="fa fa-chevron-right" id="showLeft"></i></h3>
   </div>
-
-
 
 
 {!! HTML::style('css/push_left_menu.css') !!}
