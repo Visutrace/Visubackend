@@ -19,11 +19,21 @@ Route::get('/check',  function() {
   if(Auth::check()) return 'Welcome back, ' . Auth::user()->username;
 });
 
+Route::get('/test',function() {
+  dd(Auth::user()->traces);
+});
 
 
 Route::get('/home', array('as' => 'home', 'uses' => 'AuthController@home'));
 Route::get('/login', array('as' => 'login', 'uses' => 'AuthController@login'));
 Route::get('/logout', array('as' => 'logout', 'uses' => 'AuthController@logout'));
+
+
+
+Route::get('/traces/city', array('as' => 'traces.city', 'uses' => 'TraceController@showCity'));
+Route::get('/traces/rural', array('as' => 'traces.rural', 'uses' => 'TraceController@showRural'));
+Route::get('/traces/urban', array('as' => 'traces.urban', 'uses' => 'TraceController@showUrban'));
+
 
 Route::group(['middleware' => 'auth'], function(){
   Route::resource('traces', 'TraceController', ['except' => ['edit','update', 'index'] ] );

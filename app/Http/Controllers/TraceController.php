@@ -69,23 +69,35 @@ class TraceController extends Controller
     {
         $traces =  $this->traces->whereUuid($uuid);
 
-        if(! isset($traces))
-            \App::abort('404');
+        if(! isset($traces)) {
+            if($uuid != 'city' && $uuid != 'urban' && $uuid != 'rural')
+                \App::abort('404');
+        }
 
-        $trace_lines  = file(storage_path() . '/traces/'. $uuid . '.csv');
+        $file_contents  = file_get_contents(storage_path() . '/traces/'. $uuid . '.csv');
+
+        $trace_lines = explode("\n",$file_contents);
+
+        //just removing pesky empty strings
+        $trace_lines = array_filter($trace_lines);
 
         return \View::make('traces.show')->withTrace_lines($trace_lines);
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
+
+    public function showCity()
     {
-        // TODO: Logic for deleting a trace set
+        return $this->show('city');
+    }
+
+    public function showUrban()
+    {
+        return $this->show('urban');
+    }
+
+    public function showRural()
+    {
+        return $this->show('rural');
     }
 }
