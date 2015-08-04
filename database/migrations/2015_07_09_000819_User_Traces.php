@@ -20,6 +20,8 @@ class UserTraces extends Migration
                   ->references('id')->on('users')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
+            $table->timestamps();
+
         });
     }
 
@@ -30,6 +32,6 @@ class UserTraces extends Migration
      */
     public function down()
     {
-        Schema::drop('user_traces');
+        Schema::dropIfExists('user_traces');
     }
 }
