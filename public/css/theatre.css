@@ -1,5 +1,5 @@
 
-body { background-color: black; } 
+#visualization-contiainer { background-color: black; } 
 
 #dat-gui-container{
   width:100%;

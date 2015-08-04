@@ -269,8 +269,8 @@
 	MobileEntity.prototype.makeSprite = function() {
 
 		// //Now all the nimbly bimbly pixijs stuff
-		this.texture = PIXI.Texture.fromImage(this.defaultImage);
-		this.sprite = new PIXI.Sprite(this.texture);
+		this.texture = this.texture || PIXI.Texture.fromImage(this.defaultImage);
+		this.sprite = this.sprite || new PIXI.Sprite(this.texture);
 
 		// //Make the sprite interactive
 		this.sprite.setInteractive(true);

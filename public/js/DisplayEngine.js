@@ -25,7 +25,7 @@
 	numOfLengths = tracedata.length;
 
 	for(var i = 0; i < numOfLengths; i++){ //for each line of trace data
-		pD = tracedata[i].split(" "); //split the values
+		pD = tracedata[i].split(","); //split the values
 
 		temp = new Length(pD[0], pD[1],pD[2],pD[3],pD[4],pD[5],pD[6]); //make the values into a length called temp
 
@@ -59,18 +59,24 @@
 	var zoneStage = new PIXI.DisplayObjectContainer();
 	zoneStage.visible = true;
 	var allZones = [];
-	
-
 
 	var movingCars = [];
 
 
 	var cars = []; //Where the mobile entity's will be sent
 
+
+	var graph = new PIXI.Graphics();
+	graph.beginFill(0xFFFFFF);
+	graph.drawRect(0,0,8,8);
+	graph.endFill();
+	var texture = graph.generateTexture();
+
 	allPaths.forEach(function(path){
 		car = new MobileEntity(path.id);
 		car.setPath(path);
-		car.setDefaultImage("images/8 Pixel White.png");
+
+		car.texture = texture;
 		car.setDefaultCanvas(movingCarsStage);
 		car.makeSprite();
 		car.setDefaultScale(1.5);
@@ -87,6 +93,7 @@
 		car.setNeighborhood(cars);
 
 	});
+
 
 	stage.addChild(movingCarsStage);
 	stage.addChild(selectedVehicle);
