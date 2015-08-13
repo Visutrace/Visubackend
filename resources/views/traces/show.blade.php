@@ -16,12 +16,16 @@
 
 </div>
 
+
 <script type="text/javascript">
 
     <?php 
 
         $trace_data = json_encode($trace_lines);
         echo 'var tracedata = '.$trace_data.";\n";
+
+        echo 'var viewport_x = '.$traces->viewport_x.";\n";
+        echo 'var viewport_y = '.$traces->viewport_y.";\n";
      ?>
 
 </script>
@@ -34,6 +38,7 @@
 {!! HTML::script('js/pixi.js') !!}
 {!! HTML::script('js/VisuTrace.js') !!}
 {!! HTML::script('js/DisplayEngine.js') !!}
+
 
 
 @stop
