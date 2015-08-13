@@ -13,7 +13,7 @@
         <div class="col-xs-offset-3 col-xs-3">
 
         <a href="{!! route('traces.show',$trace->uuid) !!}">
-            <img src="http://dummyimage.com/200x200/000/fff.png&txt={!! $trace->uuid !!}">
+            {!! $trace->name !!}        
         </a>
 
         </div>
@@ -22,7 +22,7 @@
         <div class="col-xs-3">
 
         <a href="{!! route('traces.show',$trace->uuid) !!}">
-            <img src="http://dummyimage.com/200x200/000/fff.png&txt={!! $trace->uuid !!}">
+            {!! $trace->name !!}        
         </a>
 
         </div>
