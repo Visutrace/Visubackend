@@ -41,8 +41,12 @@ class TraceController extends Controller
     public function store(StoreTraceRequest $request)
     {
 
+
     $trace_instance = new \App\UserTraces(array(
-      'uuid' => Uuid::uuid4()
+      'uuid' => Uuid::uuid4(),
+      'viewport_x' => null != \Input::get('viewport_x') ? \Input::get('viewport_x') : 3000   ,
+      'viewport_y' => null != \Input::get('viewport_y') ? \Input::get('viewport_y') : 3000,
+      'name' => \Input::get('name')
     ));
 
     $trace_instance->user_id = \Auth::user()->id;
@@ -74,6 +78,7 @@ class TraceController extends Controller
                 \App::abort('404');
         }
 
+
         $file_contents  = file_get_contents(storage_path() . '/traces/'. $uuid . '.csv');
 
         $trace_lines = explode("\n",$file_contents);
@@ -81,8 +86,9 @@ class TraceController extends Controller
         //just removing pesky empty strings
         $trace_lines = array_filter($trace_lines);
 
-        return \View::make('traces.show')->withTrace_lines($trace_lines);
-
+        return \View::make('traces.show')
+            ->withTrace_lines($trace_lines)
+            ->withTraces($traces);
     }
 
 
