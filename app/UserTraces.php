@@ -14,7 +14,7 @@ class UserTraces extends Model
      *
      * @var array
      */
-    protected $fillable = ['uuid'];
+    protected $fillable = ['uuid', 'viewport_x','viewport_y', 'name'];
 
     /**
      * The attributes excluded from the model's JSON form.
