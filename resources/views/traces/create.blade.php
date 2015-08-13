@@ -22,13 +22,37 @@
             'files' => true)) !!}
 
     <div class="form-group">
-        {!! Form::label('Upload your traces here! ') !!}
-        {!! Form::file('traces', null) !!}
+        {!! Form::label('Trace Name ') !!}
+        {!! Form::input('text', 'name', null, ['required' => 'required' , 'class' => 'form-control']) !!}
     </div>
+
+    <div class="form-group">
+        {!! Form::label('Upload your traces here! ') !!}
+        {!! Form::file('traces', null, ['required' => 'required', 'class' => 'form-control']) !!}
+    </div>
+
+        <hr></hr>
+
+    <h3> Optional Parameters </h3>
+
+
+    <div class="form-group">
+        {!! Form::label('Trace File Dimension X ') !!}
+        {!! Form::text('viewport_x', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::label('Trace File Dimension Y! ') !!}
+        {!! Form::text('viewport_y', null, ['class' => 'form-control']) !!}
+    </div>
+
+
 
     <div class="form-group">
         {!! Form::submit('Upload your Traces!') !!}
     </div>
+
+
     {!! Form::close() !!}
     </div>
 
