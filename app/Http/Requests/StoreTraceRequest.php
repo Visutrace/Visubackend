@@ -23,8 +23,11 @@ class StoreTraceRequest extends Request
      */
     public function rules()
     {
+
+        //todo: find some gosh darn reason I can't validate a csv mimetype
         return [
-             'traces'       => 'required'
+            'traces'       => 'required|mimes:csv,txt',
+            'name' => 'required'
         ];
     }
 }
