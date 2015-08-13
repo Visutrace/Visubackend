@@ -34,7 +34,7 @@
 
 
 
-		temp = new Length(pD[0], pD[1], pD[2], 3000-pD[3],pD[4], 3000-pD[5],pD[6]); //make the values into a length called temp
+		temp = new Length(pD[0], pD[1], pD[2], viewport_y-pD[3],pD[4], viewport_y-pD[5],pD[6]); //make the values into a length called temp
 
 		console.log(temp);
 
@@ -119,7 +119,7 @@
 
 
 	// create a renderer instance.
-	var renderer = PIXI.autoDetectRenderer(3000, 3000, document.getElementById('display-canvas'));
+	var renderer = PIXI.autoDetectRenderer(viewport_x, viewport_y, document.getElementById('display-canvas'));
 
 	document.getElementById('display-canvas').style.height = Math.min(window.innerHeight, window.innerWidth);
 	document.getElementById('display-canvas').style.width = Math.min(window.innerHeight, window.innerWidth);
