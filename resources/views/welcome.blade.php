@@ -1,6 +1,5 @@
 @extends('templates.base')
 @section('content')
-@include('snippets.nav_bar')
 
     <div class='col-xs-9 col-offset-xs-3'>
 
@@ -27,11 +26,20 @@
             <section>
                 <h4> Logging In  </h4>
                 <p>
-                    Right now we support logging in with Github, but we plan to expand authentication to include Google, Facebook, and Twitter.
+                    Right now we support logging in with Github, but we plan to expand authentication to include Google, Facebook, and Twitter. To log in, simply click the Github icon.
                 </p>
 
-                <a href="{!! route('login')!!}">  
-                    {!! HTML::image('images/showimage.png') !!}
+                <div class="col-xs-3">
+                    <a href="{!! route('login')!!}">  
+                        <div class="col-xs-12">
+                            {!! HTML::image('images/showimage.png') !!}
+                        </div>
+                        <div class="col-xs-offset-3 col-xs-9">
+                            Login With Github
+                        </div>
+                    </a>
+                </div>
+
                 </a>
 
             </section>  
