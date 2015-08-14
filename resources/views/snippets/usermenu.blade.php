@@ -1,5 +1,5 @@
  <!-- body has the class "cbp-spmenu-push" -->
-<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left cbp-spmenu-open" id="cbp-spmenu-s1">
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left " id="cbp-spmenu-s1">
   <h3 id="hideLeft">
     <i class="fa fa-chevron-left"></i>
     Visutrace   
