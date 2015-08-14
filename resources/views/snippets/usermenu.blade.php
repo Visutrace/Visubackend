@@ -6,6 +6,7 @@
   </h3>
   <a href="{!! route('home') !!}">Home</a>
   <a href="{!! route('traces.create') !!}">Upload a data set</a>
+  <a href="{!! route('logout') !!}">Logout</a>
 </nav>
 
   <div style="position:fixed; left:10px">
