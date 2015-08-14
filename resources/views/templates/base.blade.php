@@ -20,6 +20,8 @@
             </h2>
     </div>
     </header>
+    
+@include('snippets.nav_bar')
 
     
 @if(Session::has('error'))
