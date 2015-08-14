@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('Trace File Dimension Y! ') !!}
+        {!! Form::label('Trace File Dimension Y ') !!}
         {!! Form::text('viewport_y', null, ['class' => 'form-control']) !!}
     </div>
 
