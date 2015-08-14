@@ -4,6 +4,23 @@
 
 
 <div class="col-xs-12">
+
+<div class="col-xs-9 col-xs-offset-3">
+    <h2>
+        Your Trace Files
+    </h2>
+
+
+    @if($user->traces->count() === 0))
+        <p>
+            You have not uploaded any trace files
+        </p>
+
+    @endif
+
+</div>
+
+
   @foreach($user->traces as $iterator=>$trace)
 
     @if($iterator % 3 === 0)
