@@ -11,7 +11,7 @@
     </h2>
 
 
-    @if($user->traces->count() === 0))
+    @if($user->traces->count() === 0)
         <p>
             You have not uploaded any trace files
         </p>
