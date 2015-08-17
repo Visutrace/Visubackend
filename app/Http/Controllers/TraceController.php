@@ -60,7 +60,8 @@ class TraceController extends Controller
         storage_path() . '/traces/', $fileName
     );
 
-    return \Redirect::route('home')->withSuccess("Success, data set uploaded!");
+    return $this->show($trace_instance->uuid)->withSuccess($trace_insance->name . ' saved successfully!');
+
     }
 
     /**
