@@ -60,7 +60,7 @@ class TraceController extends Controller
         storage_path() . '/traces/', $fileName
     );
 
-    return $this->show($trace_instance->uuid)->withSuccess($trace_insance->name . ' saved successfully!');
+    return $this->show($trace_instance->uuid)->withSuccess($trace_instance->name . ' saved successfully!');
 
     }
 
